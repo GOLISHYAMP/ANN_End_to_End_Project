@@ -2,3 +2,8 @@ numpy
 pandas
 matplotlib
 seaborn
+tensorflow
+streamlit
+tensorboard
+scikit-learn
+ipykernel
