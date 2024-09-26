@@ -7,3 +7,5 @@ streamlit
 tensorboard
 scikit-learn
 ipykernel
+# pickle
+streamlit
