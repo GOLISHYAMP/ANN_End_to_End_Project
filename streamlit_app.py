@@ -2,23 +2,29 @@ import pickle
 from tensorflow.keras.models import load_model
 import pandas as pd
 import numpy as np
+import os
 
+# Define the components of the path
+base_dir = 'artifacts'
+sub_dir = 'models'
 
-with open('artifacts\models\LabelEncoder.pkl', 'rb') as f:
+with open(os.path.join(base_dir, sub_dir, 'LabelEncoder.pkl'), 'rb') as f:
   LE = pickle.load(f)
   f.close()
 
-with open('artifacts\models\ColumnTransformer.pkl', 'rb') as f:
+with open(os.path.join(base_dir, sub_dir, 'ColumnTransformer.pkl'), 'rb') as f:  
   ct = pickle.load(f)
   f.close()
 
-with open('artifacts\models\StandardScaler.pkl', 'rb') as f:
+with open(os.path.join(base_dir, sub_dir, 'StandardScaler.pkl'), 'rb') as f:  
   sc = pickle.load(f)
   f.close()
-model = load_model('artifacts\models\model.h5')
+model = load_model(os.path.join(base_dir, sub_dir, 'model.h5'))
 
 import streamlit as st
-
+st.write("""
+# End to End project of ANN
+""")
 st.title("Predict the churn of employee")
 # st.title("_Streamlit_ is :blue[cool] :sunglasses:")
 
